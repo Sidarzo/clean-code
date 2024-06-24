@@ -25,17 +25,6 @@ public class CompteBancaire {
      */
     private String type;
 
-    /**
-     * @param solde
-     * @param decouvert
-     * @param type
-     */
-    public CompteBancaire(String type, double solde, double decouvert) {
-        super();
-        this.type = type;
-        this.solde = solde;
-        this.decouvert = decouvert;
-    }
 
 
     /**

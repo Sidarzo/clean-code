@@ -7,16 +7,18 @@ public class Caisse {
 
     private String nom;
     private List<Item> items;
+    private Integer poidsAccepte;
 
     /**
      * Constructeur
      *
      * @param nom
+     * @param poidsAccepte
      */
-    public Caisse(String nom) {
-        super();
+    public Caisse(String nom, Integer poidsAccepte) {
         this.nom = nom;
         this.items = new ArrayList<>();
+        this.poidsAccepte = poidsAccepte;
     }
 
     /**
@@ -55,4 +57,13 @@ public class Caisse {
         this.items = items;
     }
 
+    public boolean canAcceptItem(Item item) {
+        return item.getPoids() < this.poidsAccepte;
+    }
+
+    public void addItem(Item item) {
+        if (canAcceptItem(item)) {
+            this.items.add(item);
+        }
+    }
 }
